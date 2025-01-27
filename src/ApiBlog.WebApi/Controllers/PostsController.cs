@@ -29,10 +29,10 @@ public class PostsController : BaseController
     [HttpGet("{id}")]
     [SwaggerOperation(Description = "Retrieves a post by Id.")]
     [SwaggerResponse(StatusCodes.Status200OK)]
-    public async Task<ActionResult<IEnumerable<PostDto>>> GetPost(string id, CancellationToken cancellationToken = default)
+    public async Task<ActionResult<PostDto>> GetPost(string id, CancellationToken cancellationToken = default)
     {
         var post = await _postsService.GetPostByIdAsync(id, cancellationToken);
-        return Ok(post);
+        return OkOrNotFound(post);
     }
 
 
