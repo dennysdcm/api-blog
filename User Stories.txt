@@ -1,0 +1,81 @@
+## User Story 1: Blog Api CRUD Operations
+
+As a user,
+I want to create, edit, delete, retrieve post data,
+So that I can manage content in the app.
+
+### Acceptance Criteria:
+S1: Create Post
+- Given I provide valid post details (title, content),
+- When I send a POST request to /api/posts,
+- Then the system should create a new post
+
+S2: Edit a Post
+
+- Given a post is in an editable state,
+- When I send a PUT request to /api/posts/{id} with updated details,
+- Then update the post with new data
+
+- Given a post is not in an editable state (published),
+- When I send a PUT request to /api/posts/{id},
+- Then the system should return appropriate error message.
+
+S3: Delete a Post
+
+- Given a post exists,
+- When I send a DELETE request to /api/posts/{id},
+- Then the system should delete the post.
+
+- Given the post does not exist,
+- When I send a DELETE request to /api/posts/{id},
+- Then the system should return a 404 Not Found status.
+
+S4:Get All Posts
+
+-Given there are posts in the system,
+-When I send a GET request to /api/posts,
+-Then the system should return the list of posts.
+
+S5: Get Post by ID
+-Given the post with the specified ID exists,
+-When I send a GET request to /api/posts/{id},
+-Then the system should return the post details.
+
+-Given the post with the specified ID does not exist,
+-When I send a GET request to /api/posts/{id},
+-Then a 404 Not Found status should return.
+
+S6: Publish a Post
+-Given a post is in an editable state,
+-When I send a PUT request to /api/posts/{id}/publish,
+-Then the post status is set to "Published".
+
+
+User Story 2: User Registration and Authentication
+As a new user,
+I want to register with a username and password,
+So that I can use the Post Api protected resources.
+
+Acceptance Criteria:
+S1: Register a User
+Given I provide a valid username and password,
+When I send a POST request to /api/identity/register,
+Then a new user account is created.
+
+Given I provide a username that already exists,
+When I send a POST request to /api/identity/register,
+Then an appropriate error message should be retured.
+
+S2: Authenticate a User and  generate JWT Token
+Given I provide a valid username and password,
+When I send a POST request to /api/identity/authenticate,
+Then the system should return a JWT token.
+
+S3: JWT Token Usage in Post APIs
+Given I provide a valid JWT token,
+When I send a request to any /api/posts endpoint,
+Then the system should authorize the request and process it as expected.
+
+Given I do not provide a JWT token or provide an invalid one,
+When I send a request to any /api/posts endpoint,
+Then the system should return a 401 Unauthorized response.
