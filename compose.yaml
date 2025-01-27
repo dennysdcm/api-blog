@@ -4,3 +4,24 @@
     build:
       context: .
       dockerfile: src/ApiBlog.WebApi/Dockerfile
+    environment:
+      - ConnectionStrings__MongoDbConnection=mongodb://root:YourSecurePwd!@mongodb:27017
+    depends_on:
+        - mongodb
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+      
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: YourSecurePwd!
+
+volumes:
+  mongo-data:

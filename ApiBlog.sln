@@ -11,6 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D716BBB-2AFC-4899-A1A6-69D43FD04BFD}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
+		compose-debug.yaml = compose-debug.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBlog.UnitTests", "tests\ApiBlog.UnitTests\ApiBlog.UnitTests.csproj", "{3B2D1942-A6FB-42C2-B886-83DD73B5B7F8}"
