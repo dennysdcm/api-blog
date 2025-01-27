@@ -1,0 +1,6 @@
+﻿services:
+  apiblog.webapi:
+    image: apiblog.webapi
+    build:
+      context: .
+      dockerfile: src/ApiBlog.WebApi/Dockerfile

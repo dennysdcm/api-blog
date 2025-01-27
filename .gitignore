@@ -398,3 +398,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/.idea/.gitignore
+/.idea/indexLayout.xml
+/.idea/vcs.xml
+/.idea/.idea.ApiBlog/.idea/.gitignore
+/.idea/.idea.ApiBlog/.idea/.name
+/.idea/.idea.ApiBlog/.idea/indexLayout.xml
+/.idea/.idea.ApiBlog/.idea/vcs.xml
