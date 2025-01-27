@@ -40,7 +40,7 @@ public class PostService : IPostsService
 
     public async Task<PostDto> GetPostByIdAsync(string id, CancellationToken cancellationToken = default)
     {
-        return (await _postRepository.GetByIdAsync(id, cancellationToken)).AsDto();
+        return (await _postRepository.GetByIdAsync(id, cancellationToken))?.AsDto();
     }
 
     public async Task CreatePostAsync(CreatePostRequest request, CancellationToken cancellationToken = default)
